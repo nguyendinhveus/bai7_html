@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Layers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #000033;
+        }
+
+        .main-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .image-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-layer img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Background chính */
+        .main-bg {
+            z-index: 1;
+        }
+
+        /* Mảng màu đỏ bên phải */
+        .right-bg {
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            left: 50%; 
+            width: 70%; 
+            height: 100%;
+        }
+        /* Header */
+        .header-1 {
+            z-index: 3;
+            position: absolute;
+            top: 5%;
+            left: 4%;
+            width: 50px; /* Kích thước nhỏ theo chiều rộng */
+            height: auto; /* Giữ tỉ lệ chiều cao */
+           
+        }
+
+        .header-2 {
+            z-index: 4;
+            position: absolute;
+            top: 5%;
+            right: 4%;
+            width: 50px; /* Kích thước nhỏ theo chiều rộng */
+            height: auto; /* Giữ tỉ lệ chiều cao */
+           
+        }
+        
+
+        .center-text {
+            z-index: 5;
+            position: absolute;
+            top: 40%; /* Giữ ở giữa theo chiều dọc */
+            left: 0; /* Canh trái */
+            right: 0; /* Canh phải */
+            width: 100%; /* Chiếm toàn bộ chiều rộng */
+            height: auto; /* Để tự điều chỉnh chiều cao dựa trên tỉ lệ ảnh */
+            text-align: center; 
+        }
+        
+
+        /* Hình chiếc giày */
+        .shoe {
+            z-index: 6;
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            width: 40%; /* Chiếm toàn bộ chiều rộng */
+            height: 100%; /* Để tự điều chỉnh chiều cao dựa trên tỉ lệ ảnh */
+            text-align: center; 
+        }
+
+        /* Text thông tin và giá */
+        .text-info {
+            z-index: 7;
+            position: absolute;
+            bottom: 27%; /* Đặt ngay dưới hình giày */
+            left: 10%;
+            width: 100%; /* Điều chỉnh kích thước của text */
+            height: auto;
+        }
+        .btn {
+            z-index: 8;
+            position: absolute;
+            bottom: 20%; 
+            left: 10%;
+            width: 100%; 
+            height: auto;
+        }
+        .btn a img {
+            width: 10%; 
+            height: auto;
+            transition: transform 0.3s ease; 
+        }
+        .btn a img:hover {
+            transform: scale(1.2); 
+        }
+        /* Phần chứa các logo mạng xã hội */
+        .social-icons {
+            z-index: 9;
+            position: absolute;
+            bottom: 5%; 
+            left: 10%;
+            display: flex;
+            gap: 40px; 
+        }
+
+        .social-icons a img {
+            width: 30px; 
+            height: auto;
+            transition: transform 0.3s ease; 
+        }
+
+        .social-icons a img:hover {
+            transform: scale(1.2); /* Phóng to nhẹ khi hover */
+        }
+
+        .trailer {
+            z-index: 10;
+            position: absolute;
+            bottom: 5%;
+            left: 85%;
+            width: 50%; 
+            height: auto; 
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Background chính -->
+        <div class="image-layer main-bg">
+            <img src="mian bg.png" alt="Main Background">
+        </div>
+
+        <!-- Mảng màu đỏ bên phải -->
+        <div class="image-layer right-bg">
+            <img src="right bg.png" alt="Right Background">
+        </div>
+
+         <!-- Header -->
+        <div class="header-1">
+            <img src="header1.png" alt="Header-1">
+        </div>
+        <div class="header-2">
+            <img src="header2.png" alt="Header-2">
+        </div>
+
+        <!-- Chữ nổi ở giữa màn hình -->
+        <div class="center-text">
+            <img src="Air Jordan 6 Retro SP (2).png" alt="Center Text">
+        </div>
+         <!-- Ảnh chiếc giày -->
+         <div class="shoe">
+            <img src="giay.png" alt="Shoe">
+        </div>
+
+        <!-- Text thông tin và giá giày -->
+        <div class="text-info">
+            <img src="text (1).png" alt="Text Information">
+        </div>
+        <div class="btn">
+            <a href="#">
+                <img src="btn.png" alt="bt-add">
+            </a>
+        </div>
+        <!-- Phần chứa các logo mạng xã hội -->
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="FACE.png" alt="Facebook Logo">
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+                <img src="T.png" alt="Twitter Logo">
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="ING.png" alt="Instagram Logo">
+            </a>
+            <a href="https://www.skype.com" target="_blank">
+                <img src="S.png" alt="Skype Logo">
+            </a>
+            <a href="https://www.linkedin.com" target="_blank">
+                <img src="linkedin.png" alt="LinkedIn Logo">
+            </a>
+        </div>
+        <div class="trailer">
+            <a href="https://www.youtube.com/watch?v=pJ9GQfDY9ms" target="_blank">
+                <img src="trailer.png" alt="bt-trailer">
+            </a>
+        </div>
+    </div>
+</body>
+</html>
